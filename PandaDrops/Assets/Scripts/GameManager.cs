@@ -6,45 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject menuCanvas;
-    public GameObject hud;
-    private Health player;
-    void Start()
-    {
-        if(SceneManager.GetActiveScene().name == "Level")
-        {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        }
-        Time.timeScale = 1;
-        menuCanvas.SetActive(false);
-        hud.SetActive(true);
-    }
-
-    void Update()
-    {
-        if(SceneManager.GetActiveScene().name == "Level")
-        {
-            if(player!=null)
-            {
-                if(player.health<=0)
-                {
-                    YouLose();
-                }
-            }
-        }
-    }
-
     public void PauseGame()
     {
         Time.timeScale = 0;
-        menuCanvas.SetActive(true);
-        hud.SetActive(false);  
     }
     public void ReanudeGame()
     {
-        Time.timeScale = 1;
-        menuCanvas.SetActive(false);
-        hud.SetActive(true);       
+        Time.timeScale = 1;      
     }
 
     public void YouLose()
