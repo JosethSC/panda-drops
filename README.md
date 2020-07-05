@@ -1,2 +1,2 @@
 # panda-drops
-A repository of my first video game Panda Drops.
+A repository of my video game Panda Drops.
